@@ -4,7 +4,6 @@ class Api::V1::EmailsController < ApplicationController
   before_action :set_mailer, only: :send_email
 
   def send_email
-    #Strip out html tags from content
     result = @mailer.new(
       email_params[:from],
       email_params[:to],
@@ -22,6 +21,7 @@ class Api::V1::EmailsController < ApplicationController
     params.permit(:from, :to, :subject, :content)
   end
 
+  # Set mailer to use based on MAILER_API environment variable
   def set_mailer
     mailers_hash = { 'sendgrid' => SendGridMailer, 'mailgun' => MailGunMailer }
     @mailer = mailers_hash[ENV['MAILER_API']] || SendGridMailer
