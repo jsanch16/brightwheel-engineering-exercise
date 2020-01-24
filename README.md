@@ -13,7 +13,9 @@ Juan Sanchez Brightwheel Platform Engineering Assignment:
   2. To test sending an email with sendgrid (default):
     a. run in terminal `curl -d '{"from":"<email@address.com>", "to":"<email@address.com>", "subject":"Test Subject", "content": "<h1>Hello there.</h1>"}' -H "Content-type: application/json" -H "Accept: application/api.brightwheel.v1" -X POST http://localhost:3000/api/email`
   3. To test sending an email with mailgun:
-    a. Either `export MAILER_API="mailgun"` in your terminal to add the new environment variable or modify MAILER_API in config/local_env.yml in this project to `mailgun`.
+    a. Change the `MAILER_API` environment variable to 'mailgun' by:
+      1. Either running `export MAILER_API="mailgun"` in your terminal to add the new environment variable.
+      2. Shut down the rails server, modify MAILER_API in config/local_env.yml in this project to `mailgun`, and restart the rails server.
     b. run in terminal `curl -d '{"from":"<email@address.com>", "to":"<jsanch165@gmail.com>", "subject":"Test Subject", "content": "<h1>Hello there.</h1>"}' -H "Content-type: application/json" -H "Accept: application/api.brightwheel.v1" -X POST http://localhost:3000/api/email`
     c. (NOTE): mailgun only allows to send emails to `verified accounts` unless you get a domain which I believe is out of the scope of this assignment. So for testing purposes, the recipient can only be my email address: jsanch165@gmail.com
 
@@ -23,6 +25,7 @@ Juan Sanchez Brightwheel Platform Engineering Assignment:
   3. I used Rspec for writing my unit and integration/request testing.
   4. I used Webmock to mock the external API calls in my request tests.
   5. I used RestClient to hit the Sendgrid and Mailgun endpoints.
+  6. I made a local_env.yml that essentially gets run at server bootup that sets the environment variables needed.
 
 
 * Things to add or refactor if given more time:

@@ -1,3 +1,4 @@
+# found in lib/
 require 'sendgrid_mailer'
 require 'mailgun_mailer'
 class Api::V1::EmailsController < ApplicationController
