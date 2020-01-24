@@ -25,11 +25,11 @@ gem 'puma', '~> 3.11'
 # linting
 gem 'rubocop', require: false
 
-# Rate-limiting/throttling functionality
-gem 'rack-attack', '~> 5.0', '>= 5.0.1'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# To send HTTP requests
+gem 'rest-client', '2.1.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails', '~> 3.8'
+  gem 'webmock', '3.8.0'
 end
 
 group :development do
@@ -46,11 +47,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :test do
-  gem 'database_cleaner', '~> 1.7'
-  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
