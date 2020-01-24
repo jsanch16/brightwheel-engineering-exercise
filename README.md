@@ -18,15 +18,15 @@ Juan Sanchez Brightwheel Platform Engineering Assignment:
     c. (NOTE): mailgun only allows to send emails to `verified accounts` unless you get a domain which I believe is out of the scope of this assignment. So for testing purposes, the recipient can only be my email address: jsanch165@gmail.com
 
 * Tech stack and framework decisions:
-  -I went with Ruby on Rails for this assignment because I have the strongest epxerience with it and it highly lends itself for applications that you want to get up and running as fast as possible.
-  -I implemented API versioning with a version header for backwards compatability. It defaults to V1 if no version header is provided.
-  -I used Rspec for writing my unit and integration/request testing.
-  -I used Webmock to mock the external API calls in my request tests.
-  -I used RestClient to hit the Sendgrid and Mailgun endpoints.
+  1. I went with Ruby on Rails for this assignment because I have the strongest epxerience with it and it highly lends itself for applications that you want to get up and running as fast as possible.
+  2. I implemented API versioning with a version header for backwards compatability. It defaults to V1 if no version header is provided.
+  3. I used Rspec for writing my unit and integration/request testing.
+  4. I used Webmock to mock the external API calls in my request tests.
+  5. I used RestClient to hit the Sendgrid and Mailgun endpoints.
 
 
 * Things to add or refactor if given more time:
-  -Improve error handling to show more detailed errors.
-  -Email address validation, same generic error is shown if email address is invalid.
-  -Write more unit tests for the emailing service objects, right not they're only indirectly tested through my integration/request tests.
-  -Implement User and JWT token based authentication to authenticate the user attempting to hit the endpoint.
+  1. Improve error handling to show more detailed errors.
+  2. Email address validation, same generic error is shown if email address is invalid.
+  3. Write more unit tests for the emailing service objects, right not they're only indirectly tested through my integration/request tests.
+  4. Implement User and JWT token based authentication to authenticate the user attempting to hit the endpoint.
