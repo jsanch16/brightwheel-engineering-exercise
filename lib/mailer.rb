@@ -14,8 +14,7 @@ class Mailer
     @content = strip_html_tags(content)
   end
 
-  # mandatory: define a #call method. its return value will be available
-  #            through #result
+  # mandatory: define a #call method to send out email throught mail API.
   # @return response [MailerResponse] structure containing message and code
   def call
     raise "Not Implemented"
